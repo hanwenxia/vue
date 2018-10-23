@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+  <div>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+  </div>
+</body>
+</html>
+<script>
+//第一题
+    var ary=[1,2,3,4];
+    var obj={name:'zf',age:9};
+    for(var k in obj){
+	//k对象中的属性名
+	console.log(k);
+	}
+//第二题
+    var ary=[1,2,3,4];
+    var obj={name:'zf',age:9};
+	obj.name;
+	var a='name';
+	obj.a;
+    for(var k in obj){
+	//k对象中的属性名
+	console.log(k);
+	console.log(obj.k);
+	}
+//第三题
+    var a = 0 && 12;
+	var b = 0 || 12;
+	Number('12a')
+	Number('1,2')
+	parseInt('12a');
+//button
+    var oBtns=document.getElementsByTagName('button'); 
+    for(let i=0;i<oBtns.length;i++){//var可以用let代替表示事件的循环绑定
+    oBtns[i].onclick=function(){
+        //alert(this).innerHTML;
+         alert(i);
+}
+}
+//第四题
+		var ary=[1,2,3,4];
+       // ary[4]=5;添加个数
+       ary.push(5,3,4,5);//给数组末尾添加项
+       console.log(ary);
+//第五题
+       function fn(){
+         return 12;
+		 return 13;
+		 //return 有两个作用，一个打断函数的执行
+         //另一个返回给外界，不写return时返回默认
+         
+     }
+	 
+        var f=fn();
+		console.log(f);
+		var ary=[1,2,3,4];
+		//ary[4]=5;
+		//var n=ary.push(5,{},{},{},fn);//给数组的末尾添加
+		//返回值为改编之后的数组长度
+		//console.log(n,ary);
+		//var item=ary.pop()//删除数组最后一位；
+        var n=ary.unshift();
+		//ary.shift()//删除数组首位
+//第六题
+        ary = [65,34,688,456,8908];
+        var ary3=ary.sort(function (a,b) {
+        return a -b;
+		//返回值a-b是升序，b-a是降序
+})//sort的返回结果是排好序之后的数组
+       console.log(ary3 === ary)
+	  //console.log(ary);//输出排好序的数组
+	  //ary.reverse()//数组的的反转，返回结果跟原数组是一个地址
+//第七题 forEach
+        ary2 = [10,20,30,40];
+        ary2.forEach(function (item,index) {
+		//用来循环数组
+		// item 是循环的数组的每一项
+		//index 是循环的每一项的索引
+})
+        console.log(ary2);
+		//var可以重新var但是let就不行    const（常量）不可更改和重新赋值
+</script>

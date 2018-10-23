@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+            border: 1px dashed #cccccc;
+            border-radius: 100px;
+            text-align: center;
+            line-height: 200px;
+            background:-webkit-linear-gradient(left top,red,pink,blue );/*背景颜色从左到右*/
+            box-shadow: 3px 3px 3px 3px #cccccc;/*阴影 */
+        }
+        .ff{
+            width: 400px;
+            height: 200px;
+            border: 10px solid #ccc;
+            border-radius: 50%;
+            line-height: 200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .box{
+            width: 260px;
+            height: 100px;
+            background-color: #ccc;
+            border: 10px dashed black;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;/*盒子变成100x100px 偏向与针对ie*/
+        }
+        
+    </style>
+<script> 
+ //第一题
+    var a = b = c = d = 12;
+    console.log(a == d)
+    d = 1;
+    console.log(a,b,c,d);// 12 12 12 1
+// 第二题
+    var x=y=z=[1,2,3,4];//数组属于引用数字类型
+    console.log(x==y);//true
+    z[4]=5;//给z添加一项 索引为4项
+    //[4]代表下标，，数组中有这一项有修改，没有就添加，下标从0开始
+    console.log(z);
+    console.log(x,y);
+//第三题
+      var str='23.jj';//NaN(nat a number) null none
+      //空字符串或者字符串只有空格，那么number得到的结果都是0
+      console.log(Number(str));//Number把其他东西转化为数字，空字符串得到0
+      console.log(parseInt(str));//只要第一个字符是非数字的，那么结果就是NaN；若第一个是数字，则往后查找，在查找到非数字的时候停止查找
+// //第四题
+      function sum(a,b,c){//形参
+          console.log(arguments[1]);//arguments是参数集合([]是第几项)
+          //return 6;
+      }
+    var q=sum(1,2,3,4,5);//实参
+//第五题
+        function sum(a,b,c) {
+            var total=0;
+        // console.log(arguments)// 实参集合（实际的参数 集合）
+        for(var i=0; i < arguments.length; i++){
+             console.log(arguments[i])
+             total=total+arguments[i];
+
+          }
+          return total;
+        }
+        var q=sum(1,2,3,4,5);//实参
+        console.log(q);
+//第六题
+        var n=4%5;//4除以5取余为4
+        if(n>=2 && n<=3){//并且
+            console.log(2);
+        }
+        if(n>=2 || n<=3){//或者
+            console.log('any number');//任何数字
+        }
+
+
+        // //在布尔类型中 有五个是false  其他的都是true
+        // //0 NaN  '' null none undefined 
+        // //！代表取非
+        // //！！代表取反后，再取反         ！！1 相当于 Boolean(1)
+        // var a=1 || 2;//满足成立1
+        // var b=1 && 2;//两个都要看，第一个成立，要满足第二个成立
+        //若a不成立，就不看b了
+        //对于&&来说前边成立给后边，前边不成立给前边
+        //对于||来说前边成立给前边，前边不成立给后边
+        //  ==  相对比较 会把两边类型转换成同一种再去比
+        //  ===  绝对比较    先看两边是不是同一类型，若不是直接就是false，若是则再去比较值是否相等
+        // '0' != 1
+        // '0' !== 1
+        //js中的数据类型分为两大类
+        //     基本数据类型（值类型）string number Boolean null undefined
+        //     引用数据类型 [] {} function  Date Math 正则 
+        //  基本数据类型操作的都是一个值，引用数据类型都是一个地址
+        // console.log('0' == 0); //把两边转化成数字再进行比较
+        // //先把引用数据类型转换为字符串型，再把字符串转化成数字，在进行比较
+        // console.log([] == false);//true
+        // console.log(![] == false);//true
+//第七题
+        var name='珠峰', age=9; //var  name='', age=9;
+        console.log('我的名字是'+name+'我的年龄是'+age);
+        //es6 字符串模板
+        var str=`我的名字是${name} 我的年龄是${age}` 
+        console.log(str);
+        var str2='124\'456';//若想用单引号包括单引号，我们需要用\把字符串中的单引号转义
+//第八题
+        var str='123  石家庄';
+        str.replace(123,'美丽的');
+        console.log(str);
+
+
+        //number类型 NaN
+        NaN == NaN //false 结果永远不相等
+        Number();
+        parseInt();
+        parseFloat();
+        isNaN(1/'a')//判断参数是否是NaN  若是则运用true，否则运用false
+        null == undefined//true
+        null === undefined //false
+        typeof(1) //查看括号内的数字类型
+        var s= typeof typeof 1//在控制台上写 'string'
+        typeof typeof typeof 12//'string'
+
+        //boolean
+        //Boolean; | ;||
+        Number([1]) ;
+        var obj={name:'zh',age:9}
+        console.log(obj.name);
+        //对象中获取属性值的两种方式，一种打点，另一种是[],中括号这种方式一般适用于属性值是通过变量获取的情况
+
+//第九题
+        for(var i=0;i<10;i++){
+            switch(i%4){
+                case 1:
+                case 3:
+                  i +=1;//i=i+1
+                  break;
+                case 0:
+                case 2:
+                  i +=2;//i=i+2
+                  break;
+                default:i+=4;
+            }
+        }
+        console.log(i);
+//第十题
+     var oBtns=document.getElementsByTagName('button');
+     for(var i = 0; i < oBtns.length ; i++){
+           oBtns[i].onclick = function () {
+                 alert(this.innerHTML);
+}
+}
+
+</script> 
+</head>
+<body>
+    <!--常见行内元素：span ,a ,em.,i, strong
+        常见块元素：div ,h系列 ul（ol）,header,main,footer
+        标签语义化：对应的标签对应是
+        css 盒子模型 内容 填充 边框
+        id选择器比class高
+        padding盒子向外撑，margin向里
+     -->
+    <span>石家庄职业技术学院</span>
+    <div class="ff">石家庄职业技术学院</div>
+    <div class="box">石家庄职业技术学院</div>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+</body>
+</html>
